@@ -3,7 +3,6 @@ package noapplet.GoMokuTest_consoleBased.Tests;
 import noapplet.GoMokuTest_consoleBased.Board;
 import noapplet.GoMokuTest_consoleBased.Stone;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;

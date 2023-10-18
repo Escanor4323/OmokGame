@@ -1,6 +1,4 @@
 package noapplet.GoMokuTest_consoleBased.Tests;
-
-import noapplet.GoMokuTest_consoleBased.Board;
 import noapplet.GoMokuTest_consoleBased.OmokGameConsole;
 import noapplet.GoMokuTest_consoleBased.Stone;
 import org.junit.jupiter.api.Assertions;
@@ -30,16 +28,13 @@ class OmokGameConsoleTest {
         System.setOut(new PrintStream(outContent));
 
         InputStream originalIn = System.in;
-        System.setIn(new ByteArrayInputStream("".getBytes())); // Empty input
+        System.setIn(new ByteArrayInputStream("".getBytes()));
 
         OmokGameConsole game = new OmokGameConsole(false, System.out, System.in);
 
-        // Assuming Board has a method to get its state or is public
-        Assertions.assertEquals(Stone.EMPTY, game.board.getGrid()[0][0]); // Assuming the board starts empty
-
+        Assertions.assertEquals(Stone.EMPTY, game.board.getGrid()[0][0]);
         assertTrue(outContent.toString().contains("Human goes first!"));
 
-        // Reset the streams to their originals after the test
         System.setOut(originalOut);
         System.setIn(originalIn);
     }
@@ -51,21 +46,18 @@ class OmokGameConsoleTest {
         System.setOut(new PrintStream(outContent));
 
         InputStream originalIn = System.in;
-        System.setIn(new ByteArrayInputStream("".getBytes())); // Empty input
+        System.setIn(new ByteArrayInputStream("".getBytes()));
 
         OmokGameConsole game = new OmokGameConsole(false, System.out, System.in);
 
-        // Checking the output message
         assertTrue(outContent.toString().contains("Human goes first!"));
 
-        // Assuming Board has a method to get its state or is public
         for (int i = 0; i < game.board.getGrid().length; i++) {
             for (int j = 0; j < game.board.getGrid()[i].length; j++) {
-                Assertions.assertEquals(Stone.EMPTY, game.board.getGrid()[i][j]); // Assuming the board starts empty
+                Assertions.assertEquals(Stone.EMPTY, game.board.getGrid()[i][j]);
             }
         }
 
-        // Reset the streams to their originals after the test
         System.setOut(originalOut);
         System.setIn(originalIn);
     }
